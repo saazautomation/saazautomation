@@ -26,7 +26,7 @@ export default function MagicAiSearchSection() {
         </div>
         <div
           className="magic-search-stage"
-          style={{ ["--magic-item-count" as string]: String(lines.length) }}
+          style={{ ["--magic-item-count" as string]: String(magicSearchLines.length) }}
         >
           <div className="magic-search-viewport" aria-hidden>
             <div className="magic-search-fade magic-search-fade--top" />

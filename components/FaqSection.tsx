@@ -6,7 +6,7 @@ import { useBooking } from "@/context/BookingContext";
 
 export default function FaqSection() {
   const { openBooking } = useBooking();
-  const [openId, setOpenId] = useState<number | null>(null);
+  const [openId, setOpenId] = useState<number | null>(0);
 
   return (
     <section className="faqm-section">
