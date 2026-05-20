@@ -8,25 +8,17 @@ function useCountUp(target: number, active: boolean) {
 
   useEffect(() => {
     if (!active) return;
-
-    let raf = 0;
-    let cancelled = false;
+    let start = 0;
     const duration = 1400;
     const t0 = performance.now();
-
     const tick = (now: number) => {
-      if (cancelled) return;
       const p = Math.min((now - t0) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3);
-      setValue(Math.round(target * eased));
-      if (p < 1) raf = requestAnimationFrame(tick);
+      start = Math.round(target * eased);
+      setValue(start);
+      if (p < 1) requestAnimationFrame(tick);
     };
-
-    raf = requestAnimationFrame(tick);
-    return () => {
-      cancelled = true;
-      cancelAnimationFrame(raf);
-    };
+    requestAnimationFrame(tick);
   }, [target, active]);
 
   return value;
