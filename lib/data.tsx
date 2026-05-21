@@ -103,12 +103,12 @@ export const navItems: NavItem[] = [
         id: "voice",
         title: "Voice Agents",
         subtitle: "Inbound & Outbound Calls",
-        href: "#about",
+        href: "/voice-agents",
         preview: {
           image: img.voice,
           quote: "AI voice agents that qualify leads, book appointments, and handle calls with full context.",
-          cta: "Hear a Demo",
-          ctaHref: "#showreel",
+          cta: "Explore Voice Agents",
+          ctaHref: "/voice-agents",
         },
       },
       {
