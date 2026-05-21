@@ -74,8 +74,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <span className="line-1">YOUR BUSINESS.</span>
-          <span className="line-2">RUNNING ITSELF.</span>
+          <span className="line-1">YOUR BUSINESS</span>
+          <span className="line-2">RUNNING ITSELF</span>
         </motion.h1>
         <Reveal delay={0.6}>
           <p className="hero-sub">
@@ -84,7 +84,7 @@ export default function Hero() {
           </p>
         </Reveal>
         <Reveal delay={0.75}>
-          <p className="hero-tagline">THE LAST TIME YOU&apos;LL HIRE FOR REPETITIVE WORK</p>
+          <p className="hero-tagline">Your Best Hire This Year Isn&apos;t a Person</p>
         </Reveal>
         <Reveal delay={0.8} className="hero-btns">
           <motion.a
