@@ -60,6 +60,7 @@ export default function Nav() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [hoveredLinkId, setHoveredLinkId] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
   const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const activeItem = navItems.find((item) => item.label === activeMenu);
@@ -79,6 +80,7 @@ export default function Nav() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (!mobileOpen) setMobileExpanded(null);
     return () => {
       document.body.style.overflow = "";
     };
@@ -246,29 +248,75 @@ export default function Nav() {
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
+            {/* ── close button ── */}
+            <button
+              type="button"
+              className="mobile-drawer-close"
+              onClick={() => setMobileOpen(false)}
+              aria-label="Close menu"
+            >
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden>
+                <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+
             <div className="mobile-drawer-inner">
-              {navItems.map((item) => (
-                <div key={item.label} className="mobile-group">
-                  <Link
-                    href={item.href}
-                    className="mobile-link-main"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                  {item.dropdown?.map((link) => (
-                    <Link
-                      key={link.id}
-                      href={link.href}
-                      className="mobile-sublink"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      <span>{link.title}</span>
-                      <small>{link.subtitle}</small>
-                    </Link>
-                  ))}
-                </div>
-              ))}
+              {navItems.map((item) => {
+                const hasDropdown = Boolean(item.dropdown?.length);
+                const isExpanded = mobileExpanded === item.label;
+
+                return (
+                  <div key={item.label} className="mobile-group">
+                    {hasDropdown ? (
+                      /* tappable row that expands/collapses sublinks */
+                      <button
+                        type="button"
+                        className={`mobile-link-main mobile-link-main--toggle ${isExpanded ? "is-open" : ""}`}
+                        onClick={() => setMobileExpanded(isExpanded ? null : item.label)}
+                        aria-expanded={isExpanded}
+                      >
+                        {item.label}
+                        <span className={`mobile-toggle-caret ${isExpanded ? "open" : ""}`} aria-hidden />
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="mobile-link-main"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+
+                    <AnimatePresence initial={false}>
+                      {isExpanded && item.dropdown && (
+                        <motion.div
+                          className="mobile-sublinks-wrap"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+                          style={{ overflow: "hidden" }}
+                        >
+                          {item.dropdown.map((link) => (
+                            <Link
+                              key={link.id}
+                              href={link.href}
+                              className="mobile-sublink"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              <span>{link.title}</span>
+                              <small>{link.subtitle}</small>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
+
               <button type="button" className="btn-r mobile-cta" onClick={openBooking}>
                 <span>Book a Call</span>
               </button>

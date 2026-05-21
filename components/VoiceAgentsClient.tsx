@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { BookingProvider, useBooking } from "@/context/BookingContext";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -131,6 +130,429 @@ function VoiceHero() {
         <span>SCROLL</span>
         <div className="scroll-ln" />
       </Reveal>
+    </section>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   VIDEO / PRODUCT SECTION  (below hero)
+───────────────────────────────────────────── */
+const trustPills = [
+  { label: "Zero Missed Calls" },
+  { label: "CRM Auto-Sync" },
+  { label: "47+ Languages" },
+];
+
+const recentCalls = [
+  { name: "Marcus Webb",       company: "GrowthStack Inc.",   dur: "4m 12s", status: "Booked",    tag: "bg" },
+  { name: "Priya Nair",        company: "CloudBase Ltd.",      dur: "2m 55s", status: "Qualified", tag: "gr" },
+  { name: "Jordan Ellis",      company: "RealtyPro Group",    dur: "6m 08s", status: "Booked",    tag: "bg" },
+  { name: "Sofia Marchetti",   company: "Nexus Health",       dur: "1m 44s", status: "Callback",  tag: "or" },
+];
+
+/* Replace with your YouTube video ID — e.g. "dQ1x..." */
+const DEMO_VIDEO_ID = "kAcFR_T8Pzs";
+
+function VoiceVideoSection() {
+  const waveHeights = [35, 60, 85, 55, 100, 70, 45, 90, 65, 40, 75, 50, 95, 60, 35, 80, 55, 100, 70, 45];
+  const [videoOpen, setVideoOpen] = useState(false);
+
+  /* lock body scroll while modal is open */
+  useEffect(() => {
+    document.body.style.overflow = videoOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [videoOpen]);
+
+  const closeVideo = () => setVideoOpen(false);
+
+  return (
+    <>
+    <section className="va-vid-section">
+
+      {/* decorative gradient bars — right side */}
+      <div className="va-vid-bars-wrap" aria-hidden>
+        <div className="va-vid-bar va-vid-bar-1" />
+        <div className="va-vid-bar va-vid-bar-2" />
+        <div className="va-vid-bar va-vid-bar-3" />
+        <div className="va-vid-bar va-vid-bar-4" />
+      </div>
+      {/* decorative gradient — left soft glow */}
+      <div className="va-vid-glow-left" aria-hidden />
+
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+
+        {/* trust pills */}
+        <Reveal>
+          <div className="va-vid-pills">
+            {trustPills.map((p) => (
+              <div key={p.label} className="va-vid-pill">
+                <svg className="va-vid-pill-check" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <circle cx="8" cy="8" r="7.25" stroke="currentColor" strokeWidth="1.5" />
+                  <polyline points="4.5,8.5 7,11 11.5,5.5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {p.label}
+              </div>
+            ))}
+          </div>
+        </Reveal>
+
+        {/* browser mockup */}
+        <Reveal delay={0.15}>
+          <div className="va-vid-frame">
+
+            {/* browser chrome bar */}
+            <div className="va-vid-chrome">
+              <div className="va-vid-dots">
+                <span /><span /><span />
+              </div>
+              <div className="va-vid-url">
+                <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <rect x="1" y="6" width="14" height="9" rx="2" stroke="currentColor" strokeWidth="1.5" />
+                  <path d="M5 6V4a3 3 0 0 1 6 0v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+                app.saazautomation.com/voice-dashboard
+              </div>
+              <div className="va-vid-chrome-actions">
+                <span /><span />
+              </div>
+            </div>
+
+            {/* dashboard UI */}
+            <div className="va-vid-dashboard">
+
+              {/* dashboard header */}
+              <div className="va-vid-db-header">
+                <div className="va-vid-db-brand">
+                  <span className="va-vid-db-logo">SAAZ</span>
+                  <span className="va-vid-db-title">Voice Agent · Live Dashboard</span>
+                </div>
+                <div className="va-vid-db-header-right">
+                  <span className="va-vid-db-live">
+                    <span className="va-vid-db-live-dot" />
+                    Live
+                  </span>
+                  <span className="va-vid-db-date">Thu, May 21 · 11:41 AM</span>
+                </div>
+              </div>
+
+              {/* metrics row */}
+              <div className="va-vid-metrics">
+                {[
+                  { val: "3",    lbl: "Active Calls" },
+                  { val: "142",  lbl: "Calls Today" },
+                  { val: "4m 32s", lbl: "Avg Duration" },
+                  { val: "97%",  lbl: "Answer Rate" },
+                ].map((m) => (
+                  <div key={m.lbl} className="va-vid-metric">
+                    <span className="va-vid-metric-val">{m.val}</span>
+                    <span className="va-vid-metric-lbl">{m.lbl}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* active call + recent calls */}
+              <div className="va-vid-body">
+
+                {/* active call panel */}
+                <div className="va-vid-active">
+                  <div className="va-vid-active-label">
+                    <span className="va-vid-db-live-dot" style={{ width: 6, height: 6 }} />
+                    Active Call
+                  </div>
+                  <div className="va-vid-active-contact">
+                    <div className="va-vid-active-av">JK</div>
+                    <div>
+                      <div className="va-vid-active-name">James Kowalski</div>
+                      <div className="va-vid-active-co">RealtyPro Group · Inbound</div>
+                    </div>
+                    <div className="va-vid-active-timer">02:14</div>
+                  </div>
+                  {/* waveform */}
+                  <div className="va-vid-wave" aria-hidden>
+                    {waveHeights.map((h, i) => (
+                      <div
+                        key={i}
+                        className="va-vid-wave-bar"
+                        style={{
+                          height: `${h}%`,
+                          animationDelay: `${(i * 0.09) % 1.6}s`,
+                          animationDuration: `${0.9 + (i % 4) * 0.15}s`,
+                        }}
+                      />
+                    ))}
+                  </div>
+                  {/* crm sync badge */}
+                  <div className="va-vid-crm-sync">
+                    <svg width="11" height="11" viewBox="0 0 16 16" fill="none" aria-hidden>
+                      <ellipse cx="8" cy="4" rx="6" ry="2.25" stroke="currentColor" strokeWidth="1.4" />
+                      <path d="M14 8c0 1.24-2.69 2.25-6 2.25S2 9.24 2 8" stroke="currentColor" strokeWidth="1.4" />
+                      <path d="M2 4v8c0 1.24 2.69 2.25 6 2.25S14 13.24 14 12V4" stroke="currentColor" strokeWidth="1.4" />
+                    </svg>
+                    HubSpot syncing…
+                  </div>
+                </div>
+
+                {/* recent calls table */}
+                <div className="va-vid-recents">
+                  <div className="va-vid-recents-label">Recent Calls</div>
+                  <div className="va-vid-recents-list">
+                    {recentCalls.map((c) => (
+                      <div key={c.name} className="va-vid-recents-row">
+                        <div className={`va-vid-recents-av va-vid-av-${c.tag}`}>
+                          {c.name.split(" ").map((n) => n[0]).join("")}
+                        </div>
+                        <div className="va-vid-recents-info">
+                          <span className="va-vid-recents-name">{c.name}</span>
+                          <span className="va-vid-recents-co">{c.company}</span>
+                        </div>
+                        <span className="va-vid-recents-dur">{c.dur}</span>
+                        <span className={`va-vid-recents-status va-vid-status-${c.tag}`}>{c.status}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* play button overlay */}
+            <div className="va-vid-overlay">
+              <motion.button
+                type="button"
+                className="va-vid-play"
+                onClick={() => setVideoOpen(true)}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.96 }}
+                aria-label="Watch demo"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                  <polygon points="6,3 20,12 6,21" />
+                </svg>
+              </motion.button>
+              <p className="va-vid-play-label">Watch Live Demo · 2 min</p>
+            </div>
+
+          </div>
+        </Reveal>
+
+      </div>
+    </section>
+
+    {/* ── Video modal ── */}
+    <AnimatePresence>
+      {videoOpen && (
+        <motion.div
+          className="va-vid-modal-backdrop"
+          onClick={closeVideo}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div
+            className="va-vid-modal-box"
+            onClick={(e) => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.93, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.93, y: 24 }}
+            transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* close button */}
+            <button
+              type="button"
+              className="va-vid-modal-close"
+              onClick={closeVideo}
+              aria-label="Close video"
+            >
+              <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden>
+                <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+              </svg>
+            </button>
+
+            {/* 16/9 iframe wrapper */}
+            <div className="va-vid-modal-embed">
+              <iframe
+                src={`https://www.youtube.com/embed/${DEMO_VIDEO_ID}?autoplay=1&rel=0&modestbranding=1&color=white`}
+                title="SAAZ Voice Agent Demo"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+    </>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   MISSING-OUT / COMPARISON SECTION
+───────────────────────────────────────────── */
+const compRows = [
+  {
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+      </svg>
+    ),
+    label: "Answer Rate",
+    without: 52,
+    with: 97,
+    withoutLabel: "52%",
+    withLabel: "97%",
+  },
+  {
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" />
+        <polyline points="23 21 23 19 20 16 17 19 14 16 14 21" />
+      </svg>
+    ),
+    label: "Leads Qualified",
+    without: 28,
+    with: 84,
+    withoutLabel: "28%",
+    withLabel: "84%",
+  },
+  {
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+        <polyline points="9 16 11 18 15 14" />
+      </svg>
+    ),
+    label: "Appointments Booked",
+    without: 19,
+    with: 73,
+    withoutLabel: "19%",
+    withLabel: "73%",
+  },
+  {
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+      </svg>
+    ),
+    label: "Revenue Closed",
+    without: 11,
+    with: 56,
+    withoutLabel: "11%",
+    withLabel: "56%",
+  },
+];
+
+function CompBar({ row, index }: { row: typeof compRows[0]; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setAnimate(true); obs.disconnect(); } },
+      { threshold: 0.3 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="va-comp-row"
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.45, delay: index * 0.08 }}
+    >
+      <div className="va-comp-row-label">
+        <span className="va-comp-row-icon">{row.icon}</span>
+        {row.label}
+      </div>
+
+      <div className="va-comp-track">
+        {/* without SAAZ bar */}
+        <div
+          className="va-comp-bar va-comp-bar--without"
+          style={{ width: animate ? `${row.without}%` : "0%" }}
+        />
+        {/* with SAAZ bar */}
+        <div
+          className="va-comp-bar va-comp-bar--with"
+          style={{ width: animate ? `${row.with}%` : "0%" }}
+        />
+      </div>
+
+      <div className="va-comp-row-vals">
+        <span className="va-comp-val va-comp-val--without">{row.withoutLabel}</span>
+        <span className="va-comp-val va-comp-val--with">{row.withLabel}</span>
+      </div>
+    </motion.div>
+  );
+}
+
+function VoiceMissingSection() {
+  return (
+    <section className="va-comp-section">
+      <div className="va-comp-inner">
+
+        {/* text block */}
+        <Reveal>
+          <div className="va-comp-text">
+            <p className="va-comp-eyebrow">The Hidden Cost of Manual Calls</p>
+            <h2 className="va-comp-h">
+              You&apos;re missing out on
+              <br />
+              <span className="va-comp-h-accent">60% of your revenue.</span>
+            </h2>
+            <p className="va-comp-sub">
+              Every unanswered call, slow follow-up and unqualified lead is revenue walking out
+              the door. AI voice agents answer instantly, qualify ruthlessly and book
+              relentlessly — 24/7.
+            </p>
+          </div>
+        </Reveal>
+
+        {/* comparison chart */}
+        <Reveal delay={0.1}>
+          <div className="va-comp-chart">
+
+            {/* chart header */}
+            <div className="va-comp-chart-header">
+              <div className="va-comp-chart-scope">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                Inbound Call Performance
+              </div>
+              <div className="va-comp-legend">
+                <span className="va-comp-legend-item va-comp-legend--without">
+                  <span />
+                  Without Voice AI
+                </span>
+                <span className="va-comp-legend-item va-comp-legend--with">
+                  <span />
+                  With SAAZ Voice Agent
+                </span>
+              </div>
+            </div>
+
+            {/* bars */}
+            <div className="va-comp-bars">
+              {compRows.map((row, i) => (
+                <CompBar key={row.label} row={row} index={i} />
+              ))}
+            </div>
+
+          </div>
+        </Reveal>
+
+      </div>
     </section>
   );
 }
@@ -1120,6 +1542,8 @@ function VoiceAgentsInner() {
       <ScrollToTop />
       <main>
         <VoiceHero />
+        <VoiceVideoSection />
+        <VoiceMissingSection />
         <VoiceStats />
         <VoiceServices />
         <VoiceMarquee />
