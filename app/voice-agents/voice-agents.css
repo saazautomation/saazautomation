@@ -187,7 +187,7 @@
 
 /* ─── VIDEO / PRODUCT SECTION ───────────────────────────────── */
 .va-vid-section {
-  background: #ffffff;
+  background: var(--bg);
   padding: 0 5rem 6rem;
   position: relative;
   overflow: hidden;
@@ -217,9 +217,9 @@
   left: 0;
   width: 130px;
   background: linear-gradient(180deg,
-    rgba(251, 54, 64, 0.09) 0%,
-    rgba(251, 54, 64, 0.14) 35%,
-    rgba(251, 54, 64, 0.06) 65%,
+    rgba(251, 54, 64, 0.18) 0%,
+    rgba(251, 54, 64, 0.28) 35%,
+    rgba(251, 54, 64, 0.12) 65%,
     transparent 100%
   );
 }
@@ -229,9 +229,9 @@
   width: 100px;
   background: linear-gradient(180deg,
     transparent 0%,
-    rgba(251, 54, 64, 0.07) 25%,
-    rgba(251, 54, 64, 0.11) 55%,
-    rgba(251, 54, 64, 0.04) 80%,
+    rgba(199, 203, 211, 0.06) 25%,
+    rgba(251, 54, 64, 0.16) 55%,
+    rgba(251, 54, 64, 0.07) 80%,
     transparent 100%
   );
 }
@@ -240,9 +240,9 @@
   left: 290px;
   width: 80px;
   background: linear-gradient(180deg,
-    rgba(251, 54, 64, 0.05) 0%,
-    rgba(251, 54, 64, 0.08) 40%,
-    rgba(251, 54, 64, 0.03) 70%,
+    rgba(251, 54, 64, 0.08) 0%,
+    rgba(251, 54, 64, 0.14) 40%,
+    rgba(199, 203, 211, 0.05) 70%,
     transparent 100%
   );
 }
@@ -252,8 +252,8 @@
   width: 60px;
   background: linear-gradient(180deg,
     transparent 10%,
-    rgba(251, 54, 64, 0.05) 40%,
-    rgba(251, 54, 64, 0.07) 60%,
+    rgba(251, 54, 64, 0.09) 40%,
+    rgba(251, 54, 64, 0.12) 60%,
     transparent 95%
   );
 }
@@ -264,10 +264,10 @@
   left: -160px;
   top: 50%;
   transform: translateY(-50%);
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(251, 54, 64, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(251, 54, 64, 0.1) 0%, transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -286,21 +286,21 @@
   align-items: center;
   gap: 0.55rem;
   padding: 0.55rem 1.3rem;
-  border: 1px solid rgba(15, 20, 25, 0.1);
-  background: #ffffff;
-  box-shadow: 0 1px 6px rgba(15, 20, 25, 0.07);
+  border: 1px solid rgba(199, 203, 211, 0.2);
+  background: rgba(6, 24, 18, 0.7);
+  backdrop-filter: blur(8px);
   font-family: var(--font-b), sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
-  color: #374151;
+  color: rgba(199, 203, 211, 0.8);
   border-radius: 999px;
-  transition: border-color 0.3s, color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, color 0.3s, background 0.3s;
 }
 
 .va-vid-pill:hover {
-  border-color: rgba(251, 54, 64, 0.35);
-  color: var(--red);
-  box-shadow: 0 2px 12px rgba(251, 54, 64, 0.1);
+  border-color: rgba(251, 54, 64, 0.5);
+  color: var(--white);
+  background: rgba(251, 54, 64, 0.08);
 }
 
 .va-vid-pill-check {
@@ -317,11 +317,14 @@
   margin: 0 auto;
   border-radius: 16px;
   overflow: hidden;
+  /* light border ring + layered glow so frame stands out on dark bg */
   box-shadow:
-    0 0 0 1px rgba(15, 20, 25, 0.08),
-    0 8px 32px rgba(15, 20, 25, 0.1),
-    0 28px 70px rgba(15, 20, 25, 0.16),
-    0 0 0 4px rgba(255, 255, 255, 0.9);
+    0 0 0 1px rgba(199, 203, 211, 0.18),
+    0 0 0 4px rgba(199, 203, 211, 0.06),
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 40px 100px rgba(0, 0, 0, 0.35),
+    0 0 80px rgba(251, 54, 64, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* browser chrome bar */
@@ -783,10 +786,9 @@
   font-family: var(--font-m), monospace;
   font-size: 0.68rem;
   letter-spacing: 2.5px;
-  color: rgba(242, 244, 248, 0.92);
+  color: rgba(242, 244, 248, 0.85);
   text-transform: uppercase;
   pointer-events: none;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* ── video modal ── */
