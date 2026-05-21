@@ -61,6 +61,73 @@ const row2: ShowcaseItem[] = [
   },
 ];
 
+type JourneyStoryCard = {
+  src: string;
+  alt: string;
+  user: string;
+  stat: string;
+  label: string;
+};
+
+const journeyStories: JourneyStoryCard[] = [
+  {
+    src: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50e?w=640&q=80",
+    alt: "Trader reviewing live P&L dashboard",
+    user: "@alex_trades",
+    stat: "+18.4%",
+    label: "30-day ROI",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=640&q=80",
+    alt: "Healthy meal prep for focused trading routine",
+    user: "@maya_fx",
+    stat: "94%",
+    label: "Win rate",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=640&q=80",
+    alt: "Morning workout before market open",
+    user: "@sam_quant",
+    stat: "2.1ms",
+    label: "Avg latency",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=640&q=80",
+    alt: "Trading analytics on multiple screens",
+    user: "@desk_ops",
+    stat: "320+",
+    label: "Bots live",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1546487190-681a385c0a28?w=640&q=80",
+    alt: "Recovery and performance tracking",
+    user: "@lina_auto",
+    stat: "24/7",
+    label: "Uptime",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=640&q=80",
+    alt: "Automation workflow metrics",
+    user: "@growth_ai",
+    stat: "+42%",
+    label: "Efficiency",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=640&q=80",
+    alt: "Mobile trading bot controls",
+    user: "@mobile_fx",
+    stat: "$1.2M",
+    label: "Volume",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1559757142-5c350d0d3c56?w=640&q=80",
+    alt: "Health metrics alongside trading goals",
+    user: "@well_trader",
+    stat: "12k",
+    label: "Steps",
+  },
+];
+
 const row3: ShowcaseItem[] = [
   {
     src: "https://images.unsplash.com/photo-1525547719571-a2d4ac903d0e?w=900&q=80",
@@ -88,6 +155,76 @@ const row3: ShowcaseItem[] = [
     size: "wide",
   },
 ];
+
+function JourneyStoryCardItem({ card }: { card: JourneyStoryCard }) {
+  return (
+    <article className="portfolio-journey-card">
+      <Image
+        src={card.src}
+        alt={card.alt}
+        fill
+        sizes="220px"
+        className="portfolio-journey-card-img"
+      />
+      <div className="portfolio-journey-card-overlay" aria-hidden>
+        <div className="portfolio-journey-card-top">
+          <span className="portfolio-journey-card-avatar" />
+          <span className="portfolio-journey-card-user">{card.user}</span>
+        </div>
+        <div className="portfolio-journey-card-widget">
+          <span className="portfolio-journey-card-ring" />
+          <div className="portfolio-journey-card-stat">
+            <strong>{card.stat}</strong>
+            <span>{card.label}</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function PortfolioJourneyCarousel() {
+  const track = [...journeyStories, ...journeyStories];
+
+  return (
+    <section className="portfolio-journey" aria-labelledby="portfolio-journey-title">
+      <div className="portfolio-journey-shell">
+        <motion.h2
+          id="portfolio-journey-title"
+          className="portfolio-journey-title"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          Join over 1 million members
+          <br />
+          on their health journey
+        </motion.h2>
+
+        <div className="portfolio-journey-carousel" aria-label="Trading bot portfolio stories">
+          <div className="portfolio-journey-track">
+            {track.map((card, idx) => (
+              <JourneyStoryCardItem key={`${card.user}-${idx}`} card={card} />
+            ))}
+          </div>
+        </div>
+
+        <motion.div
+          className="portfolio-journey-cta-wrap"
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
+        >
+          <a href="#demo-vault" className="portfolio-journey-cta">
+            View Trading Bot Portfolio
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 function ShowcaseCard({ item }: { item: ShowcaseItem }) {
   return (
@@ -136,6 +273,7 @@ export default function Portfolio() {
   });
 
   return (
+    <>
     <section id="portfolio" ref={sectionRef} className="portfolio-showcase">
       <div className="portfolio-showcase-stage">
         <motion.header
@@ -190,5 +328,7 @@ export default function Portfolio() {
         </div>
       </div>
     </section>
+    <PortfolioJourneyCarousel />
+    </>
   );
 }
