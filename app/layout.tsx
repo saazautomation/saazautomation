@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bebas_Neue, Caveat, DM_Sans, Space_Mono } from "next/font/google";
 import "./globals.css";
 import "./redesign.css";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 
 const bebas = Bebas_Neue({
   weight: "400",
@@ -42,6 +43,7 @@ export default function RootLayout({
         className={`${bebas.variable} ${dmSans.variable} ${spaceMono.variable} ${caveat.variable}`}
       >
         {children}
+        <ElevenLabsWidget />
       </body>
     </html>
   );
