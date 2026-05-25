@@ -101,8 +101,8 @@ function AutomationHero() {
 
         <Reveal delay={0.9}>
           <p className="va-hero-sub">
-            Intelligent AI workflows and business automation that connect your tools, eliminate
-            repetitive ops, and run agentic pipelines across sales, support, and back-office — end to end.
+            Intelligent AI workflows, business automation, trading bots, and custom AI systems that connect your
+            tools, eliminate repetitive ops, and run agentic pipelines across sales, support, and operations.
           </p>
         </Reveal>
 

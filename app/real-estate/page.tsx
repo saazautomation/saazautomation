@@ -1,9 +1,9 @@
 import RealEstateClient from "@/components/RealEstateClient";
 
 export const metadata = {
-  title: "AI Voice Agent Platform for Real Estate Agents — SAAZ Automation",
+  title: "AI Automation Systems & Voice AI — SAAZ Automation",
   description:
-    "Launch your AI calling platform built for real estate agents. Close more deals, never miss a lead, and add $10K–$50K to your GCI. $29/mo launch pricing.",
+    "Intelligent AI systems company building trading bots, AI voice systems, automation workflows, and custom AI development for clients worldwide.",
 };
 
 export default function RealEstatePage() {

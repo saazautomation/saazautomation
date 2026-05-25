@@ -13,7 +13,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useSmoothAnchorLinks } from "@/hooks/useSmoothAnchorLinks";
 import Reveal from "@/components/motion/Reveal";
 
-/** Replace with your real estate demo file in /public (e.g. /videos/real-estate-demo.mp4) */
+/** Replace with your agency demo file in /public (e.g. /videos/ai-systems-demo.mp4) */
 const RE_DEMO_VIDEO_SRC = "/media/saaz-showreel.mp4";
 
 const RE_IMAGES = {
@@ -133,7 +133,7 @@ function ReHero() {
           transition={{ delay: 0.3 }}
         >
           <span className="va-badge-dot" />
-          AI Voice Agent Platform for Real Estate
+          AI Systems Platform for Modern Teams
         </motion.div>
 
         <motion.h1
@@ -147,12 +147,12 @@ function ReHero() {
           <span className="line-3">PLATFORM</span>
         </motion.h1>
 
-        <p className="re-hero-tagline">Built Exclusively for Real Estate Agents</p>
-        <p className="re-hero-gci">Close More Deals, Never Miss a Lead, and Add $10K–$50K to Your GCI Every Year</p>
+        <p className="re-hero-tagline">Built for AI Automation and Voice Workflows</p>
+        <p className="re-hero-gci">Capture More Revenue, Eliminate Bottlenecks, and Add $10K–$50K+ in Annual Profit</p>
         <p className="re-hero-sub">
-          Let AI handle your follow-ups, nurture cold leads, and book showings 24/7 — while you focus on closing.
+          Let AI handle follow-ups, qualify opportunities, and book calls 24/7 while your team focuses on execution.
         </p>
-        <p className="re-hero-social">Join 1,200+ real estate agents already generating more deals with AI voice agents.</p>
+        <p className="re-hero-social">Join 1,200+ teams already scaling faster with AI voice systems and custom automation.</p>
 
         <div className="re-pricing-pill">
           <span className="re-price-old">$97</span>
@@ -420,22 +420,22 @@ function ReVideoSection() {
 
 /* ─── 5-STEP PROCESS ─────────────────────────────────────────── */
 const steps5 = [
-  { num: "1", title: "Activate Your AI Real Estate Agent", desc: "Get instant access to your complete real estate calling dashboard", visual: "activate" as const },
-  { num: "2", title: "Train It On Your Listings & Scripts", desc: "Upload your listings, FAQs, and follow-up scripts in 10 minutes", visual: "train" as const },
-  { num: "3", title: "Connect Your Lead Sources", desc: "Sync Zillow, Realtor.com, your CRM, and MLS leads automatically", visual: "connect" as const },
-  { num: "4", title: "Launch Automated Follow-Up & Booking", desc: "AI calls every new lead within 60 seconds and books showings on your calendar", visual: "launch" as const },
-  { num: "5", title: "Close More Deals on Autopilot", desc: "Watch your pipeline fill while AI handles the calls you never had time to make", visual: "close" as const },
+  { num: "1", title: "Activate Your AI Systems Hub", desc: "Get instant access to your complete automation and voice operations dashboard", visual: "activate" as const },
+  { num: "2", title: "Train It On Your Workflows & SOPs", desc: "Upload your SOPs, offers, FAQs, and scripts in under 10 minutes", visual: "train" as const },
+  { num: "3", title: "Connect Your Business Stack", desc: "Sync ads, forms, CRM, support inboxes, and internal tools automatically", visual: "connect" as const },
+  { num: "4", title: "Launch Automated Workflows & Calls", desc: "AI responds to every new lead within 60 seconds and books calls on your calendar", visual: "launch" as const },
+  { num: "5", title: "Scale Operations on Autopilot", desc: "Watch your pipeline grow while AI runs the tasks your team never had time to finish", visual: "close" as const },
 ];
 
 const launchTags = [
   "Instant Dashboard",
   "10-Min Setup",
-  "Zillow & CRM Sync",
+  "CRM + API Sync",
   "60-Sec Callbacks",
-  "Calendar Booking",
+  "Calendar Sync",
   "No Coding Required",
   "24/7 Autopilot",
-  "MLS Integration",
+  "Custom Integrations",
 ];
 
 function LaunchStepVisual({ variant }: { variant: (typeof steps5)[number]["visual"] }) {
@@ -559,8 +559,8 @@ function ReFiveSteps() {
       <div className="container">
         <SectionHead
           eyebrow="⚡ Simple 5-Step Process"
-          title={<>How to Launch Your AI Calling System for Real Estate</>}
-          subtitle="From setup to booked showings in less than 72 hours — no coding, no tech skills needed"
+          title={<>How to Launch Your AI Automation System Fast</>}
+          subtitle="From setup to live workflows in less than 72 hours with no coding and no technical overhead"
         />
         <div className="re-launch-bento">
           {steps5.map((s, i) => (
@@ -838,29 +838,29 @@ const problemBentoSmallCards = [
     variant: "light" as const,
     icon: <ReIconCalendar />,
     metric: "18K+",
-    title: "Showing Appointments Booked",
-    desc: "via AI voice agents",
+    title: "Qualified Calls Booked",
+    desc: "via AI voice systems",
     decor: true,
   },
   {
     variant: "accent" as const,
     icon: <ReIconBuilding />,
     metric: "2,400+",
-    title: "Real Estate Agents",
-    desc: "trust the platform",
+    title: "Global Businesses",
+    desc: "running on our systems",
   },
   {
     variant: "split-light" as const,
-    label: "LEADS RESPONDED TO",
+    label: "WORKFLOWS EXECUTED",
     metric: "890K+",
     desc: "per month",
     sideIcon: <ReIconLeads />,
   },
   {
     variant: "split-dark" as const,
-    label: "DEALS CLOSED FROM AI LEADS",
+    label: "REVENUE EVENTS AUTOMATED",
     metric: "6,500+",
-    desc: "and counting",
+    desc: "and growing",
     sideIcon: <ReIconSparkle />,
   },
 ];
@@ -870,15 +870,15 @@ function ReProblem() {
     <section id="re-problem" className="re-section re-section-problem" aria-labelledby="re-problem-heading">
       <div className="container">
         <h2 id="re-problem-heading" className="sr-only">
-          Stop Losing Deals — Social Proof &amp; Platform Stats
+          Scale Faster — Social Proof &amp; Platform Stats
         </h2> 
 
         <Reveal delay={0.08}>
           <figure className="re-problem-testimonial">
             <span className="re-problem-quote-mark" aria-hidden>&ldquo;</span>
             <blockquote className="re-problem-quote">
-              By handing off every follow-up call to the AI, I stopped losing leads to faster agents and finally started
-              closing deals I never even knew I had.
+              By handing repetitive operations to AI, we stopped dropping opportunities and finally scaled
+              campaigns, support, and sales without hiring another operations team.
             </blockquote>
             <figcaption className="re-problem-attribution">
               <span className="re-problem-avatar" aria-hidden>
@@ -886,7 +886,7 @@ function ReProblem() {
               </span>
               <span className="re-problem-author">
                 <strong>Marcus T.</strong>
-                <span>Team Lead, Pinnacle Realty Group</span>
+                <span>Operations Lead, Pinnacle Growth Group</span>
               </span>
             </figcaption>
           </figure>
@@ -903,7 +903,7 @@ function ReProblem() {
                 <ReIconPhone />
               </span>
               <div className="re-problem-card-metric">340K+</div>
-              <h3 className="re-problem-card-title">Follow-Up Calls Made</h3>
+              <h3 className="re-problem-card-title">Automation Actions Completed</h3>
               <p className="re-problem-card-desc">by AI agents on the platform</p>
             </motion.article>
           </Reveal>
@@ -960,7 +960,7 @@ function ReSuccessStory() {
       <div className="container">
         <SectionHead
           eyebrow="🏆 Success Story"
-          title={<>From Chasing Leads to a Fully Booked Calendar in 60 Days</>}
+          title={<>From Manual Operations to Automated Scale in 60 Days</>}
         />
         <Reveal>
           <div className="re-story-card">
@@ -971,7 +971,7 @@ function ReSuccessStory() {
               <div className="re-story-loc">📍 Houston, TX</div>
               <div className="re-story-metrics">
                 <div className="re-story-metric">
-                  <strong>GCI Added</strong>
+                  <strong>Revenue Added</strong>
                   <span>$68,000+</span>
                 </div>
                 <div className="re-story-metric">
@@ -979,28 +979,28 @@ function ReSuccessStory() {
                   <span>60 Days</span>
                 </div>
                 <div className="re-story-metric">
-                  <strong>Leads Converted</strong>
+                  <strong>Opportunities Converted</strong>
                   <span>340+</span>
                 </div>
               </div>
             </div>
             <div className="re-story-body">
-              <p className="re-story-kicker">From manual lead chasing to an AI-powered booking engine.</p>
+              <p className="re-story-kicker">From manual follow-up to an AI-powered growth engine.</p>
               <p>
-                Marcus was spending 4 hours a day manually calling leads from Zillow and his website. Half went to
-                voicemail. The other half ghosted him. After activating his AI voice agent, every lead gets called
-                back in under a minute — day or night.
+                Marcus was spending 4 hours a day on repetitive outreach and admin handoffs. Half of inbound
+                opportunities stalled. After launching voice AI and workflow automations, every lead gets a
+                response in under a minute day or night.
               </p>
               <div className="re-story-feedback">
                 <div className="re-story-rating" aria-hidden>★★★★★</div>
                 <blockquote className="re-story-quote">
-                  &ldquo;I closed 4 extra deals last quarter that I 100% would have lost before. The AI called a Zillow
-                  lead at 11pm on a Sunday and booked a showing. That deal alone paid for this for the next 10 years.&rdquo;
+                  &ldquo;We recovered opportunities we used to lose every week. The AI handled a late-night inbound
+                  call, qualified the lead, and booked a strategy session before competitors replied.&rdquo;
                 </blockquote>
                 <div className="re-story-proof">
-                  <span className="re-story-proof-pill">4 extra deals closed</span>
+                  <span className="re-story-proof-pill">4 extra clients closed</span>
                   <span className="re-story-proof-pill">sub-60 sec follow-up</span>
-                  <span className="re-story-proof-pill">24/7 lead conversion</span>
+                  <span className="re-story-proof-pill">24/7 opportunity conversion</span>
                 </div>
               </div>
               <CtaButton>Start Your Success Story →</CtaButton>
@@ -1017,14 +1017,14 @@ function ReSuccessStory() {
 /* ─── GLOBAL COVERAGE ──────────────────────────────────────────── */
 const worldwideBadges = [
   { text: "29+ languages supported" },
-  { text: "Instant callbacks worldwide" },
+  { text: "Instant AI responses worldwide" },
   { text: "Calendar sync in every timezone" },
 ];
 
 const worldwidePills = [
-  "340K+ follow-up calls made",
-  "18K+ showings booked",
-  "890K+ leads responded monthly",
+  "340K+ AI actions completed",
+  "18K+ strategy calls booked",
+  "890K+ inquiries handled monthly",
 ];
 
 function ReWorldwideCoverage() {
@@ -1036,19 +1036,19 @@ function ReWorldwideCoverage() {
 
         <div className="re-worldwide-strip">
           <span className="re-worldwide-strip-badge">NEW</span>
-          <span>Global Coverage for Real Estate Teams</span>
+          <span>Global Coverage for AI Automation Teams</span>
           <span className="re-worldwide-strip-dot">•</span>
           <span>29+ languages built into every plan</span>
         </div>
 
         <h2 className="re-worldwide-h">
           <span className="re-worldwide-h-line">Your AI agent works worldwide.</span>
-          <span className="re-worldwide-h-accent">Start closing more deals, faster.</span>
+          <span className="re-worldwide-h-accent">Start scaling more systems, faster.</span>
         </h2>
 
         <p className="re-worldwide-lead">
-          AI-powered follow-up from first inquiry to booked showing in{" "}
-          <span className="re-worldwide-pill">minutes</span>. Serve buyers and sellers across every market
+          AI-powered follow-up from first inquiry to booked call in{" "}
+          <span className="re-worldwide-pill">minutes</span>. Serve clients across every market
           with localized scripts, instant callbacks, and timezone-aware scheduling.
         </p>
 
@@ -1079,7 +1079,7 @@ function ReWorldwideCoverage() {
           <div className="re-worldwide-preview-frame">
             <Image
               src={RE_IMAGES.worldMap}
-              alt="Real estate AI workspace showing global lead response and follow-up automation"
+              alt="AI workspace showing global lead response and follow-up automation"
               width={1024}
               height={870}
               className="re-worldwide-preview-img"
@@ -1092,7 +1092,7 @@ function ReWorldwideCoverage() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             >
               <span className="re-worldwide-float-dot" aria-hidden>●</span>
-              AI Agent Active in 29+ Languages
+              AI System Active in 29+ Languages
             </motion.div>
 
             <motion.div
@@ -1101,7 +1101,7 @@ function ReWorldwideCoverage() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
             >
               <span className="re-worldwide-float-dot re-worldwide-float-dot--red" aria-hidden>◆</span>
-              Showing booked: 12:30 PM
+              Strategy call booked: 12:30 PM
             </motion.div>
 
             <motion.div
@@ -1121,16 +1121,16 @@ function ReWorldwideCoverage() {
 
 /* ─── AGENT RESULTS ──────────────────────────────────────────── */
 const agentResults = [
-  { gci: "$18,400", initials: "JR", name: "Jennifer R.", loc: "Florida", quote: "My Zillow leads used to go cold before I could call them. Now my AI calls them instantly and I just show up to the appointment.", days: "44 days" },
-  { gci: "$24,700", initials: "DM", name: "David M.", loc: "California", quote: "I was spending 3 hours a day on follow-up calls. Now I spend 20 minutes reviewing my booked appointments. Game changer.", days: "52 days" },
-  { gci: "$31,200", initials: "SP", name: "Samantha P.", loc: "Texas", quote: "The AI qualifies buyers before I even talk to them. I only spend time on people who are actually ready to buy or sell.", days: "67 days" },
-  { gci: "$14,900", initials: "RK", name: "Ryan K.", loc: "New York", quote: "My sphere of influence follow-up used to fall apart every 6 months. Now AI keeps every past client warm automatically.", days: "38 days" },
-  { gci: "$22,100", initials: "AL", name: "Amanda L.", loc: "Arizona", quote: "I run a solo operation. Having an AI agent is like having a full-time ISA without the $4,000/month salary.", days: "59 days" },
-  { gci: "$41,500", initials: "BT", name: "Brian T.", loc: "Georgia", quote: "I threw every old dead lead database at it. The AI resurrected 12 deals I had written off completely.", days: "81 days" },
-  { gci: "$11,300", initials: "NK", name: "Natalie K.", loc: "Colorado", quote: "Open house follow-up used to take me all Monday morning. AI called all 47 visitors by Sunday night.", days: "29 days" },
-  { gci: "$16,700", initials: "CM", name: "Carlos M.", loc: "Nevada", quote: "The expired and FSBO scripts built into the platform are incredible. I'm booking 2–3 listing appointments a week on autopilot.", days: "55 days" },
-  { gci: "$9,800", initials: "TR", name: "Tanya R.", loc: "Ohio", quote: "As a part-time agent, I can't always answer my phone. My AI handles everything until I'm available. Zero missed leads.", days: "33 days" },
-  { gci: "$12,600", initials: "JH", name: "James H.", loc: "North Carolina", quote: "My old ISA was costing me $3,500/month and calling maybe 50 leads a day. The AI calls 500 leads a day for a fraction of the cost.", days: "47 days" },
+  { gci: "$18,400", initials: "JR", name: "Jennifer R.", loc: "Florida", quote: "Our ad leads used to go cold before anyone replied. Now AI responds instantly and books the right discovery call for my team.", days: "44 days" },
+  { gci: "$24,700", initials: "DM", name: "David M.", loc: "California", quote: "I was spending 3 hours a day on follow-up and admin. Now I spend 20 minutes reviewing booked calls and exceptions. Game changer.", days: "52 days" },
+  { gci: "$31,200", initials: "SP", name: "Samantha P.", loc: "Texas", quote: "The AI qualifies prospects before I even join the call. I only spend time with people who are actually ready to move.", days: "67 days" },
+  { gci: "$14,900", initials: "RK", name: "Ryan K.", loc: "New York", quote: "Our client follow-up used to fall apart every quarter. Now AI keeps every account warm automatically and nudges the next action.", days: "38 days" },
+  { gci: "$22,100", initials: "AL", name: "Amanda L.", loc: "Arizona", quote: "I run a lean team. Having an AI system is like adding full-time ops support without the extra payroll overhead.", days: "59 days" },
+  { gci: "$41,500", initials: "BT", name: "Brian T.", loc: "Georgia", quote: "We fed old inbound lists into the workflow. The AI revived opportunities we had written off and turned them into active calls.", days: "81 days" },
+  { gci: "$11,300", initials: "NK", name: "Natalie K.", loc: "Colorado", quote: "Post-event follow-up used to take all Monday morning. AI handled every attendee by Sunday night with personalized outreach.", days: "29 days" },
+  { gci: "$16,700", initials: "CM", name: "Carlos M.", loc: "Nevada", quote: "The prebuilt AI scripts are incredible. We now book 2-3 qualified strategy calls a week on near autopilot.", days: "55 days" },
+  { gci: "$9,800", initials: "TR", name: "Tanya R.", loc: "Ohio", quote: "As a founder, I cannot answer every call. AI handles everything until I am available. Zero missed opportunities.", days: "33 days" },
+  { gci: "$12,600", initials: "JH", name: "James H.", loc: "North Carolina", quote: "Our old SDR process was expensive and inconsistent. The AI now handles 10x outreach volume for a fraction of the cost.", days: "47 days" },
 ];
 
 function ReAgentResults() {
@@ -1138,14 +1138,14 @@ function ReAgentResults() {
     <section id="re-results" className="re-section">
       <div className="container">
         <SectionHead
-          eyebrow="⭐ Real Agent Results"
-          title={<>Real Estate Agents Banking More Deals Within 60 Days</>}
+          eyebrow="⭐ Real Client Results"
+          title={<>Teams Scaling Revenue with AI in Under 60 Days</>}
         />
         <div className="re-results-grid">
           {agentResults.map((a, i) => (
             <Reveal key={a.initials} delay={(i % 4) * 0.05}>
               <div className="re-result-card">
-                <div className="re-result-gci">{a.gci} GCI Added</div>
+                <div className="re-result-gci">{a.gci} Revenue Added</div>
                 <div className="re-result-agent">
                   <span className="re-result-av">{a.initials}</span>
                   <div>
@@ -1170,15 +1170,15 @@ function ReFollowUpEngine() {
     <section id="re-followup" className="re-section re-section-alt">
       <div className="container">
         <SectionHead
-          eyebrow="💰 Automated Lead Follow-Up Engine"
-          title={<>Set It Once. Book Showings Forever.</>}
-          subtitle="Every lead that hits your pipeline gets an instant AI call — then automatic follow-ups until they're ready to buy, sell, or refer someone."
+          eyebrow="💰 Automated Growth Follow-Up Engine"
+          title={<>Set It Once. Book Qualified Calls Forever.</>}
+          subtitle="Every lead that hits your pipeline gets an instant AI response and automatic follow-ups until they are ready to buy, onboard, or upgrade."
         />
         <div className="re-split re-split--followup">
           <div className="re-followup-visual-shell">
             <ReSectionVisual
               src={RE_IMAGES.supportCalls}
-              alt="Live support call dashboard showing in-progress and completed real estate leads"
+              alt="Live support call dashboard showing in-progress and completed business leads"
               className="re-visual--calls re-visual--calls-premium"
             />
             <div className="re-followup-visual-badge re-followup-visual-badge--speed">
@@ -1187,19 +1187,19 @@ function ReFollowUpEngine() {
             </div>
             <div className="re-followup-visual-badge re-followup-visual-badge--booked">
               <strong>7-8</strong>
-              <span>Booked showings / month</span>
+              <span>Booked calls / month</span>
             </div>
           </div>
           <div className="re-split-content">
             <Reveal>
               <div className="re-calc-box" style={{ margin: 0 }}>
                 <div className="re-calc-label">Your Monthly Pipeline Calculator</div>
-                <div className="re-calc-equation" aria-label="50 leads per month times 15 percent conversion equals 7 to 8 booked showings automatically">
+                <div className="re-calc-equation" aria-label="50 leads per month times 15 percent conversion equals 7 to 8 booked calls automatically">
                   <span>50 leads/month</span>
                   <span className="re-calc-op">×</span>
                   <span>15% conversion</span>
                   <span className="re-calc-op">=</span>
-                  <span className="re-calc-result">7-8 booked showings</span>
+                  <span className="re-calc-result">7-8 booked calls</span>
                 </div>
                 <p className="re-calc-formula">automatically, without missing speed-to-lead windows</p>
               </div>
@@ -1210,10 +1210,10 @@ function ReFollowUpEngine() {
           <div className="re-followup-feedback">
             <span className="re-followup-feedback-label">Client Feedback</span>
             <blockquote>
-              &ldquo;The AI called a Zillow lead at 11pm on a Sunday and booked a showing before my competitors could
+              &ldquo;The AI handled a late-night inbound lead on Sunday and booked a strategy call before competitors could
               even reply the next morning.&rdquo;
             </blockquote>
-            <p>Marcus T. — Team Lead, Pinnacle Realty Group</p>
+            <p>Marcus T. — Operations Lead, Pinnacle Growth Group</p>
           </div>
         </Reveal>
 
@@ -1227,7 +1227,7 @@ function ReFollowUpEngine() {
               points: [
                 "Call every new lead the moment they come in",
                 "Works at 2am, weekends, and holidays",
-                "Handles Zillow, Realtor.com, Facebook Ads, website leads",
+                "Handles paid ads, web forms, referrals, and inbound leads",
                 "Never let a hot lead cool down again",
               ],
             },
@@ -1241,13 +1241,13 @@ function ReFollowUpEngine() {
                 "AI follows up every 3, 7, 14, 30 days",
                 "Personalizes messages based on lead responses",
                 "Flags hot leads and alerts you instantly",
-                "Revive your dead database and find hidden deals",
+                "Revive dormant pipelines and recover hidden revenue",
               ],
             },
             {
               icon: "📅",
               plan: "Core Flow 03",
-              title: "Showing & Appointment Booking",
+              title: "Call & Appointment Booking",
               sub: "AI books directly into your calendar",
               points: [
                 "Syncs with Google Calendar and Outlook",
@@ -1287,13 +1287,13 @@ function ReWorkforce() {
     <section id="re-workforce" className="re-section re-section-workforce">
       <div className="container">
         <SectionHead
-          eyebrow="🤖 Your AI Real Estate Workforce"
-          title={<>The Agent That Never Sleeps, Never Quits, Never Misses a Call</>}
-          subtitle="A professional AI team that handles outbound follow-up, inbound inquiries, and booking at scale."
+          eyebrow="🤖 Your AI Automation Workforce"
+          title={<>The System That Never Sleeps, Never Quits, Never Misses Demand</>}
+          subtitle="A professional AI stack that handles outbound follow-up, inbound requests, and booking at scale."
         />
         <div className="re-workforce-stats">
           {[
-            { n: "15%", l: "Booking Rate on Cold Lead Calls" },
+            { n: "15%", l: "Booking Rate on Cold Inbound Calls" },
             { n: "24/7", l: "Always Available" },
             { n: "$0.10", l: "Per Minute Cost" },
           ].map((s, i) => (
@@ -1308,15 +1308,15 @@ function ReWorkforce() {
         <div className="re-split re-split--workforce">
           <ReSectionVisual
             src={RE_IMAGES.worldMap}
-            alt="World map showing AI voice agents active in 29+ languages across global markets"
+            alt="World map showing AI voice systems active in 29+ languages across global markets"
             className="re-visual--map"
           />
           <div className="re-split-content re-globe-caption">
             <p className="re-eyebrow">Always On, Everywhere</p>
-            <h3 className="re-wf-coverage-title">Never miss a lead in any time zone</h3>
+            <h3 className="re-wf-coverage-title">Never miss demand in any time zone</h3>
             <p className="re-wf-coverage-copy">
               Your AI answers, qualifies, and books across North America and beyond. Multilingual support
-              and 24/7 coverage mean motivated buyers always reach a live conversation.
+              and 24/7 coverage ensure prospects always reach a live conversation.
             </p>
           </div>
         </div>
@@ -1329,13 +1329,13 @@ function ReWorkforce() {
               </div>
               <ul>
                 <li><strong>10,000 calls in 60 minutes</strong> — engage your entire lead database fast</li>
-                <li><strong>Buyer qualification</strong> — identify who is ready now and who needs nurturing</li>
-                <li><strong>Objection handling</strong> — responds naturally to common buyer and seller concerns</li>
+                <li><strong>Prospect qualification</strong> — identify who is ready now and who needs nurturing</li>
+                <li><strong>Objection handling</strong> — responds naturally to common client concerns</li>
                 <li><strong>Direct calendar booking</strong> — route qualified prospects to open slots instantly</li>
                 <li><strong>Drip follow-up sequences</strong> — maintain 12+ months of touchpoints automatically</li>
               </ul>
               <div className="re-wf-highlights">
-                <span>$1.20 cost per qualified showing appointment</span>
+                <span>$1.20 cost per qualified strategy call</span>
                 <span>3X more appointments than manual follow-up</span>
                 <span>Consistent performance without staffing constraints</span>
               </div>
@@ -1345,21 +1345,21 @@ function ReWorkforce() {
           <Reveal delay={0.1}>
             <div className="re-wf-card">
               <div className="re-wf-card-head">
-                <h3>24/7 Listing & Buyer Hotline</h3>
+                <h3>24/7 Inbound Voice Hotline</h3>
                 <p className="re-wf-tagline">Handle inbound inquiries with instant, professional responses.</p>
               </div>
               <ul>
-                <li>Answers every call about your listings instantly</li>
-                <li>Provides property details, pricing, and availability</li>
-                <li>Qualifies buyers and books private showings</li>
-                <li>Handles after-hours inquiries from motivated buyers</li>
+                <li>Answers every call about your services instantly</li>
+                <li>Provides offer details, pricing, and availability</li>
+                <li>Qualifies prospects and books private strategy calls</li>
+                <li>Handles after-hours inquiries from motivated prospects</li>
                 <li>Routes urgent calls directly to your cell</li>
               </ul>
               <div className="re-wf-highlights">
-                <span>Save $3,000+/month vs. hiring an ISA or admin</span>
+                <span>Save $3,000+/month vs. hiring extra call coverage</span>
                 <span>Answer in 2 rings, every single time</span>
-                <span>Handle unlimited simultaneous property inquiries</span>
-                <span>Perfect recall of every listing detail</span>
+                <span>Handle unlimited simultaneous service inquiries</span>
+                <span>Perfect recall of every offer detail</span>
               </div>
               <button type="button" className="re-cta-link" onClick={openBooking}>See Inbound Demo →</button>
             </div>
@@ -1372,14 +1372,14 @@ function ReWorkforce() {
 
 /* ─── SCRIPTS ────────────────────────────────────────────────── */
 const scriptList = [
-  "New buyer inquiry script (Zillow, Realtor.com, website)",
-  "Seller lead / home valuation request script",
-  "Expired listing re-engagement script",
-  "FSBO conversion script",
-  "Open house follow-up script (same-day)",
-  "Past client sphere of influence check-in",
+  "New inbound inquiry script (ads, forms, website)",
+  "Demo request qualification and routing script",
+  "Dormant pipeline re-engagement script",
+  "Outbound cold prospect conversion script",
+  "Webinar and event follow-up script (same-day)",
+  "Past client check-in and upsell script",
   "Dead lead database reactivation script",
-  "Renter-to-buyer conversion script",
+  "Free trial to paid plan conversion script",
 ];
 
 function ReScripts() {
@@ -1387,25 +1387,25 @@ function ReScripts() {
     <section id="re-scripts" className="re-section re-section-scripts-light">
       <div className="container">
         <SectionHead
-          eyebrow="🎯 Done-For-You Real Estate AI Scripts"
-          title={<>From Activation to Booked Appointments in 72 Hours</>}
+          eyebrow="🎯 Done-For-You AI Sales Scripts"
+          title={<>From Activation to Booked Strategy Calls in 72 Hours</>}
           subtitle="Stop guessing what your AI should say. Every script, follow-up sequence, and objection handler is pre-built and proven."
         />
         <div className="re-scripts-intro">
           <p className="re-highlight-q">
-            The difference between agents with empty calendars and agents with 10+ showings a week?
+            The difference between teams with empty calendars and teams with 10+ calls a week?
             A proven system that follows up every lead without fail.
           </p>
           <div className="re-scripts-stats">
-            <div className="re-scripts-stat"><div className="re-scripts-stat-n">$47M+</div><div className="re-scripts-stat-l">in commissions generated</div></div>
-            <div className="re-scripts-stat"><div className="re-scripts-stat-n">1,200+</div><div className="re-scripts-stat-l">agents using these sequences</div></div>
-            <div className="re-scripts-stat"><div className="re-scripts-stat-n">72 hrs</div><div className="re-scripts-stat-l">to your first booked appointment</div></div>
+            <div className="re-scripts-stat"><div className="re-scripts-stat-n">$47M+</div><div className="re-scripts-stat-l">in pipeline revenue generated</div></div>
+            <div className="re-scripts-stat"><div className="re-scripts-stat-n">1,200+</div><div className="re-scripts-stat-l">teams using these sequences</div></div>
+            <div className="re-scripts-stat"><div className="re-scripts-stat-n">72 hrs</div><div className="re-scripts-stat-l">to your first booked strategy call</div></div>
           </div>
         </div>
         <div className="re-scripts-layout">
           <Reveal>
             <div className="re-script-list">
-              <h3>📱 Pre-Built Real Estate AI Scripts</h3>
+              <h3>📱 Pre-Built AI Voice + Workflow Scripts</h3>
               <p className="re-sub">Ready to deploy in one click</p>
               <ul>
                 {scriptList.map((s) => (
@@ -1415,7 +1415,7 @@ function ReScripts() {
               <div className="re-script-mini-stats">
                 <div className="re-script-mini"><div className="re-script-mini-n">28%</div><div className="re-script-mini-l">Lead-to-Appointment Rate</div></div>
                 <div className="re-script-mini"><div className="re-script-mini-n">15min</div><div className="re-script-mini-l">Average Qualifying Call</div></div>
-                <div className="re-script-mini"><div className="re-script-mini-n">$8,400</div><div className="re-script-mini-l">Avg Deal From Resurrected Leads</div></div>
+                <div className="re-script-mini"><div className="re-script-mini-n">$8,400</div><div className="re-script-mini-l">Avg Revenue From Revived Leads</div></div>
               </div>
             </div>
           </Reveal>
@@ -1425,8 +1425,8 @@ function ReScripts() {
               {[
                 { time: "Hour 1", desc: "Activate platform & import your lead database" },
                 { time: "Hour 3", desc: "AI scripts live and calling" },
-                { time: "Day 2", desc: "First booked showings appearing in your calendar" },
-                { time: "Day 3", desc: "First qualified buyer or seller conversation" },
+                { time: "Day 2", desc: "First booked strategy calls appearing in your calendar" },
+                { time: "Day 3", desc: "First qualified prospect conversation completed" },
               ].map((t) => (
                 <div key={t.time} className="re-timeline-item">
                   <span className="re-timeline-time">{t.time}</span>
@@ -1447,13 +1447,13 @@ function ReIntegrations() {
     <section id="re-integrations" className="re-section re-section-integ-light">
       <div className="container">
         <SectionHead
-          title={<>Integrates With Every Tool Real Estate Agents Already Use</>}
-          subtitle="Plug into your CRM, lead sources, and calendar stack without changing your workflow."
+          title={<>Integrates With Every Tool Your Team Already Uses</>}
+          subtitle="Plug into your CRM, lead sources, and operations stack without changing your workflow."
         />
         <div className="re-integ-visual-wrap">
           <ReSectionVisual
             src={RE_IMAGES.integrationsHub}
-            alt="400+ integrations including HubSpot, Salesforce, Zapier, and Zillow"
+            alt="400+ integrations including HubSpot, Salesforce, Zapier, and APIs"
             className="re-visual--wide re-visual--integ-hero"
           />
         </div>
@@ -1462,11 +1462,11 @@ function ReIntegrations() {
             <div className="re-integ-col">
               <h3>Native Integrations</h3>
               <ul>
-                <li>Follow Up Boss — Full bi-directional sync</li>
+                <li>HubSpot — Full bi-directional sync</li>
                 <li>GoHighLevel — Complete CRM automation</li>
-                <li>kvCORE — Native lead routing</li>
-                <li>LionDesk, Sierra Interactive, Wise Agent</li>
-                <li>BoomTown, Chime, Real Geeks</li>
+                <li>Salesforce — Native lead routing</li>
+                <li>Pipedrive, Zoho CRM, Close CRM</li>
+                <li>Airtable, Notion, Slack</li>
                 <li>Any CRM via Zapier / Make</li>
               </ul>
             </div>
@@ -1475,10 +1475,10 @@ function ReIntegrations() {
             <div className="re-integ-col">
               <h3>Lead Source Integrations</h3>
               <ul>
-                <li>Zillow Premier Agent — Instant lead sync</li>
-                <li>Realtor.com — Auto-import and instant callback</li>
+                <li>Meta Ads — Instant lead sync</li>
+                <li>Google Ads — Auto-import and instant callback</li>
                 <li>Facebook & Instagram Lead Ads</li>
-                <li>Your website / IDX portal</li>
+                <li>Your website forms and landing pages</li>
                 <li>Referral network drip follow-up</li>
               </ul>
             </div>
@@ -1502,11 +1502,11 @@ function ReIntegrations() {
 
 /* ─── COMPARISON ─────────────────────────────────────────────── */
 const compareRows = [
-  { feature: "Built specifically for real estate workflows", us: true, them: false },
+  { feature: "Built specifically for AI automation workflows", us: true, them: false },
   { feature: "Speed-to-lead under 60 seconds", us: true, them: false },
-  { feature: "Pre-built real estate scripts included", us: true, them: false },
-  { feature: "Fraction of the cost of a human ISA", us: true, them: false },
-  { feature: "Native real estate CRM integrations", us: true, them: false },
+  { feature: "Pre-built AI scripts included", us: true, them: false },
+  { feature: "Fraction of the cost of extra headcount", us: true, them: false },
+  { feature: "Native CRM and API integrations", us: true, them: false },
   { feature: "Multi-language for diverse markets", us: true, them: false },
   { feature: "Inbound + outbound AI handling", us: true, them: false },
   { feature: "Long-term 12-month nurture sequences", us: true, them: false },
@@ -1517,9 +1517,9 @@ function ReComparison() {
     <section id="re-compare" className="re-section re-section-alt">
       <div className="container">
         <SectionHead
-          eyebrow="🏆 Why Smart Real Estate Agents Choose This"
-          title={<>Why Smart Real Estate Agents Choose This Over Every Other Tool</>}
-          subtitle="What You Need to Win More Deals"
+          eyebrow="🏆 Why Growth Teams Choose This"
+          title={<>Why Smart Teams Choose This Over Every Other Tool</>}
+          subtitle="What You Need to Scale Revenue Faster"
         />
         <Reveal>
           <div className="re-compare-wrap">
@@ -1550,9 +1550,9 @@ function ReComparison() {
         <div className="re-bottom-line">
           <h3>The Bottom Line</h3>
           <ul>
-            <li>Replaces a $4,000/month ISA for $29/month</li>
+            <li>Replaces a $4,000/month manual workflow burden for $29/month</li>
             <li>Calls every lead in under 60 seconds</li>
-            <li>Actually built for how real estate agents work</li>
+            <li>Actually built for how modern AI-first teams operate</li>
           </ul>
           <CtaButton>Get Instant Access Now →</CtaButton>
         </div>
@@ -1563,16 +1563,16 @@ function ReComparison() {
 
 /* ─── PRICING OFFER ──────────────────────────────────────────── */
 const valueStack = [
-  { item: "AI Caller With 30+ Real Estate Features", value: "$997/mo value" },
-  { item: "Pre-Built Real Estate Script Library (15 scripts)", value: "$497/mo value" },
-  { item: "Native Real Estate CRM Integrations", value: "$297/mo value" },
-  { item: "Bonus #1: Real Estate Facebook & Google Ad Templates", value: "$1,997 value" },
+  { item: "AI Voice System With 30+ Automation Features", value: "$997/mo value" },
+  { item: "Pre-Built AI Script Library (15 scripts)", value: "$497/mo value" },
+  { item: "Native CRM + Workflow Integrations", value: "$297/mo value" },
+  { item: "Bonus #1: Performance Ads and Funnel Templates", value: "$1,997 value" },
   { item: "Bonus #2: Email + Text Follow-Up Sequence Templates", value: "$997 value" },
-  { item: "Bonus #3: AI Real Estate Agency Launch Course", value: "$1,497 value" },
-  { item: "Bonus #4: Done-For-You Cold Calling & ISA Scripts", value: "$497 value" },
+  { item: "Bonus #3: AI Automation Launch Playbook", value: "$1,497 value" },
+  { item: "Bonus #4: Done-For-You Outbound and Calling Scripts", value: "$497 value" },
   { item: "Bonus #5: Weekly Live Q&A Implementation Calls", value: "$997 value" },
   { item: "Bonus #6: Priority Onboarding & Setup Support", value: "$497 value" },
-  { item: "Bonus #7: Private Real Estate AI Agent Community", value: "$497 value" },
+  { item: "Bonus #7: Private AI Operators Community", value: "$497 value" },
 ];
 
 function ReOffer() {
@@ -1581,7 +1581,7 @@ function ReOffer() {
       <div className="container">
         <SectionHead
           eyebrow="🚨 Limited Time Offer — Launch Pricing Ending Soon"
-          title={<>Get the Complete AI Calling System for Real Estate Agents</>}
+          title={<>Get the Complete AI Automation System for Your Team</>}
           subtitle="Here's Everything You Get Today:"
         />
         <div className="re-offer-card">
@@ -1603,7 +1603,7 @@ function ReOffer() {
             <div className="re-save-badge">Save $8,748 Today!</div>
 
             <div className="re-offer-actions">
-              <CtaButton>Activate My AI Agent →</CtaButton>
+              <CtaButton>Activate My AI System →</CtaButton>
               <button type="button" className="re-offer-ghost-btn">Book a Demo First</button>
             </div>
 
@@ -1627,9 +1627,9 @@ function ReGuarantees() {
         <Reveal>
           <div className="re-guarantee-banner">
             <p>
-              If you don&apos;t book at least one additional showing or aren&apos;t completely satisfied,
-              we&apos;ll refund every penny. No questions asked. That&apos;s how confident we are it works
-              for real estate agents.
+              If you don&apos;t book at least one additional qualified call or aren&apos;t completely satisfied,
+              we&apos;ll refund every penny. No questions asked. That&apos;s how confident we are these systems
+              work for growth-focused teams.
             </p>
           </div>
         </Reveal>
@@ -1649,22 +1649,22 @@ function ReFinalCta() {
       />
       <div className="container re-final-content">
         <Reveal>
-          <h2>Ready to Stop Losing Deals to the Agent Who Called First?</h2>
+          <h2>Ready to Stop Losing Revenue to Slow Manual Follow-Up?</h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="re-final-sub">
-            Join 1,200+ real estate agents who activated their AI voice agent and transformed how many
-            deals they close every single month.
+            Join 1,200+ teams who activated AI voice systems and transformed how much
+            revenue they close every single month.
           </p>
         </Reveal>
         <Reveal delay={0.2}>
           <div className="re-final-actions">
-            <CtaButton>Start Booking More Showings Today →</CtaButton>
+            <CtaButton>Start Booking More Qualified Calls Today →</CtaButton>
           </div>
         </Reveal>
         <div className="re-final-meta">
           <p className="re-final-trust">100% Risk-Free • Cancel Anytime • Instant Access</p>
-          <p className="re-urgency">23 agents activated in the last 24 hours</p>
+          <p className="re-urgency">23 teams activated in the last 24 hours</p>
         </div>
       </div>
     </section>

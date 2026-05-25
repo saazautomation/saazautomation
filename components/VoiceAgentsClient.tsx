@@ -101,8 +101,8 @@ function VoiceHero() {
 
         <Reveal delay={0.9}>
           <p className="va-hero-sub">
-            Hyper-realistic AI voice agents that handle inbound calls, qualify leads, book appointments
-            and sync every conversation to your CRM — in real time, in 47+ languages.
+            Hyper-realistic AI voice systems that handle inbound calls, qualify leads, book appointments,
+            and sync every conversation to your CRM while connecting to your custom AI workflows.
           </p>
         </Reveal>
 

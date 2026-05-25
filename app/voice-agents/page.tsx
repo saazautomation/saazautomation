@@ -3,7 +3,7 @@ import VoiceAgentsClient from "@/components/VoiceAgentsClient";
 export const metadata = {
   title: "Voice Agents — SAAZ Automation",
   description:
-    "Cutting-edge AI voice agents that handle calls, qualify leads, book appointments and sync with your CRM — 24/7, in 47+ languages.",
+    "AI voice systems for inbound and outbound calls, integrated with custom workflows, AI automation services, and your existing CRM stack.",
 };
 
 export default function VoiceAgentsPage() {
