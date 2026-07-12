@@ -1,12 +1,14 @@
 "use client";
 
-import { FormEvent, useEffect } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useBooking } from "@/context/BookingContext";
 import { serviceOptions } from "@/lib/data";
 import Box from "./Box";
 
 export default function BookingModal() {
   const { isOpen, closeBooking } = useBooking();
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -16,20 +18,51 @@ export default function BookingModal() {
     return () => document.removeEventListener("keydown", onKeyDown);
   }, [isOpen, closeBooking]);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  useEffect(() => {
+    if (!isOpen) {
+      setStatus("idle");
+      setErrorMessage("");
+    }
+  }, [isOpen]);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(`New Project Inquiry — ${fd.get("name")}`);
-    const body = encodeURIComponent(
-      `Name: ${fd.get("name")}\n` +
-        `Email: ${fd.get("email")}\n` +
-        `Company: ${fd.get("company") || "—"}\n` +
-        `Service: ${fd.get("service")}\n` +
-        `Budget: ${fd.get("budget") || "—"}\n` +
-        `Timeline: ${fd.get("timeline") || "—"}\n\n` +
-        `Project Details:\n${fd.get("details")}`,
-    );
-    window.location.href = `mailto:support@saazautomation.com?subject=${subject}&body=${body}`;
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+
+    setStatus("sending");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("name"),
+          email: fd.get("email"),
+          company: fd.get("company"),
+          service: fd.get("service"),
+          budget: fd.get("budget"),
+          timeline: fd.get("timeline"),
+          details: fd.get("details"),
+        }),
+      });
+
+      const payload = (await res.json().catch(() => ({}))) as { error?: string };
+
+      if (!res.ok) {
+        throw new Error(payload.error || "Failed to send message.");
+      }
+
+      setStatus("success");
+      form.reset();
+      window.setTimeout(() => {
+        closeBooking();
+      }, 1600);
+    } catch (err) {
+      setStatus("error");
+      setErrorMessage(err instanceof Error ? err.message : "Failed to send message.");
+    }
   };
 
   return (
@@ -124,12 +157,24 @@ export default function BookingModal() {
               />
             </Box>
           </Box>
+
+          {status === "success" && (
+            <p className="form-status form-status--success" role="status">
+              Message sent — we&apos;ll reply within 24 hours.
+            </p>
+          )}
+          {status === "error" && (
+            <p className="form-status form-status--error" role="alert">
+              {errorMessage || "Something went wrong. Please try again."}
+            </p>
+          )}
+
           <Box className="modal-actions">
             <button type="button" className="btn-cancel" onClick={closeBooking}>
               Cancel
             </button>
-            <button type="submit" className="btn-submit">
-              Send Message →
+            <button type="submit" className="btn-submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending…" : "Send Message →"}
             </button>
           </Box>
         </form>

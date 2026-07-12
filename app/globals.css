@@ -1853,6 +1853,21 @@ footer.site-footer {
   margin-top: 2rem;
 }
 
+.form-status {
+  margin: 1.25rem 0 0;
+  font-family: var(--font-b), sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.form-status--success {
+  color: #5eead4;
+}
+
+.form-status--error {
+  color: #fb7185;
+}
+
 .btn-cancel {
   flex: 1;
   padding: 1rem;
@@ -1892,6 +1907,13 @@ footer.site-footer {
 .btn-submit:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 35px var(--red-glow);
+}
+
+.btn-submit:disabled {
+  opacity: 0.65;
+  transform: none;
+  box-shadow: none;
+  cursor: wait;
 }
 
 body::after {
