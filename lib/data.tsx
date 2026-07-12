@@ -274,12 +274,13 @@ export const navItems: NavItem[] = [
   { label: "Showreel", href: "#showreel" },
 ];
 
-export const footerLegalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Partner Terms", href: "#" },
-  { label: "Service Level (SLA)", href: "#" },
-  { label: "Data Processing (DPA)", href: "#" },
+export const footerIndustryLinks = [
+  { label: "Construction", href: "https://construction.saazautomation.com" },
+  { label: "Real Estate", href: "https://real-estate.saazautomation.com" },
+  { label: "Medical", href: "https://medical.saazautomation.com" },
+  { label: "Automotive", href: "https://automotive.saazautomation.com" },
+  { label: "Ecommerce", href: "https://ecommerce.saazautomation.com" },
+  { label: "Portfolio", href: "https://portfolio.saazautomation.com" },
 ];
 
 export const footerNavLinks: {
@@ -287,9 +288,10 @@ export const footerNavLinks: {
   href: string;
   isBooking?: boolean;
 }[] = [
-  { label: "Features", href: "#about" },
-  { label: "Pricing", href: "#showreel" },
-  { label: "About Us", href: "#about" },
+  { label: "Working Gallery", href: "#portfolio" },
+  { label: "Industry Builds", href: "#industry-sections" },
+  { label: "AI Automation", href: "#showreel" },
+  { label: "Book a Call", href: "#cta", isBooking: true },
 ];
 
 export const footerContact = {

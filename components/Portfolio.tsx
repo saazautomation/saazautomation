@@ -1,6 +1,6 @@
 "use client";
 
-import { industries } from "@/lib/industries";
+import { industries, type Industry } from "@/lib/industries";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";

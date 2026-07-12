@@ -45,12 +45,12 @@ export default function DemoVaultSection() {
             <div className="vault-dashes" aria-hidden />
 
             <div className="vault-copy">
-              <span className="vault-kicker">TRY FOR FREE</span>
-              <p className="vault-bridge">Want a taste before you buy?</p>
+              <span className="vault-kicker">SEE IT LIVE</span>
+              <p className="vault-bridge">Want proof before you commit?</p>
               <h2 className="vault-title">
-                Try the SAAZ
+                Try SAAZ
                 <br />
-                Demo Vault
+                AI Automation
               </h2>
 
               <motion.div
@@ -60,8 +60,8 @@ export default function DemoVaultSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: 0.12 }}
               >
-                <a href="#cta" className="vault-btn">
-                  Unlock the demo
+                <a href="#industry-sections" className="vault-btn">
+                  Explore live demos
                 </a>
                 <p className="vault-note">
                   <svg
@@ -84,7 +84,7 @@ export default function DemoVaultSection() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  Try 20 Resources for Free
+                  Five industry systems ready to tour
                 </p>
               </motion.div>
             </div>
@@ -104,7 +104,7 @@ export default function DemoVaultSection() {
             >
               <Image
                 src="/media/demo-vault-dark.png"
-                alt="SAAZ demo vault preview"
+                alt="SAAZ AI automation preview"
                 fill
                 sizes="(max-width: 1100px) 92vw, 58vw"
                 priority={false}
