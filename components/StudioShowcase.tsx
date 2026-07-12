@@ -33,15 +33,15 @@ export default function StudioShowcase() {
     <section id="studio-showcase" className="studio-section">
       <motion.div
         className="studio-heading-row"
-        aria-label="Made with SAAZ"
+        aria-label="Built with AI by SAAZ"
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.7, ease }}
       >
-        <h2 className="studio-word">Made</h2>
+        <h2 className="studio-word">Built</h2>
         <h2 className="studio-word studio-word-center">with</h2>
-        <h2 className="studio-word">SAAZ</h2>
+        <h2 className="studio-word">AI</h2>
       </motion.div>
 
       <motion.div
@@ -103,9 +103,9 @@ export default function StudioShowcase() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, ease, delay: 0.32 }}
               >
-                <span className="studio-card-brand">SAAZ AUTOMATION</span>
+                <span className="studio-card-brand">SAAZ AI AUTOMATION</span>
                 <div className="studio-card-foot-right">
-                  <span className="studio-card-resources">5 RESOURCES USED</span>
+                  <span className="studio-card-resources">LIVE WORKFLOWS</span>
                   <span className="studio-card-plus" aria-hidden>
                     +
                   </span>
@@ -121,9 +121,9 @@ export default function StudioShowcase() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.45 }}
           >
-            These systems
+            These agents
             <br />
-            are elite
+            run 24/7
             <span className="studio-annotation-arrow" aria-hidden>
               ↙
             </span>

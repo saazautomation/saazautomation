@@ -3358,8 +3358,16 @@
 
 .reviews-light-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviews-light-grid--shots {
+  max-width: 1080px;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .reviews-light-card {
@@ -3376,6 +3384,32 @@
     box-shadow 0.32s var(--ease),
     background 0.32s var(--ease),
     border-color 0.32s var(--ease);
+}
+
+.reviews-light-card--shot {
+  padding: 0;
+  overflow: hidden;
+}
+
+.reviews-light-shot {
+  width: 100%;
+  background: #0f1419;
+  border-bottom: 1px solid rgba(15, 20, 25, 0.06);
+}
+
+.reviews-light-shot-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.reviews-light-shot-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: clamp(1.25rem, 2.2vw, 1.6rem);
 }
 
 .reviews-light-card:hover {
@@ -3429,6 +3463,29 @@
   letter-spacing: 0.02em;
   color: #ffffff;
   background: linear-gradient(135deg, var(--red), #c41e28);
+  overflow: hidden;
+}
+
+.reviews-light-avatar--photo {
+  padding: 0;
+  background: #e5e7eb;
+}
+
+.reviews-light-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reviews-light-card--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease), border-color 0.22s var(--ease);
+}
+
+.reviews-light-card--link:hover {
+  transform: translateY(-3px);
 }
 
 .reviews-light-name {

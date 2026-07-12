@@ -557,40 +557,18 @@ export const projects: Project[] = [
 
 export const reviews: Review[] = [
   {
-    text: "SAAZ deployed our MT5 trading bot with strict risk caps and a kill-switch. Six months live, zero manual overrides, and execution latency we could not hit by hand.",
-    initials: "SR",
-    name: "Sarah Ross",
-    role: "Prop Firm Trader",
+    text: "SAAZ rebuilt our follow-up stack end to end. Leads get answered in minutes, CRM stays clean, and the team finally stopped chasing busywork.",
+    initials: "PW",
+    name: "Paulina Wittern-Kochs",
+    role: "with Salman",
+    image: "/media/reviews/review-paulina-salman.png",
   },
   {
-    text: "Their agentic system routes leads, updates CRM, and books calls without us babysitting every step. Response time went from hours to under a minute.",
-    initials: "JM",
-    name: "James Miller",
-    role: "CEO, TechVentures Inc",
-  },
-  {
-    text: "We needed business automation beyond chatbots. SAAZ built agentic workflows for invoicing, onboarding, and ops alerts — one stack, fully auditable.",
-    initials: "AK",
-    name: "Alex Khan",
-    role: "Founder, GrowthLab Digital",
-  },
-  {
-    text: "The trading automation handles entries, exits, and position sizing while we monitor P&L in real time. Disciplined, transparent, and built for production.",
-    initials: "DL",
-    name: "Daniel Lee",
-    role: "Head of Quant, Meridian Capital",
-  },
-  {
-    text: "Agentic AI agents research, decide, and execute tasks across our stack. SAAZ integrated brokers, Slack, and our data warehouse without breaking compliance.",
-    initials: "NP",
-    name: "Nina Patel",
-    role: "CTO, FinEdge Systems",
-  },
-  {
-    text: "From pilot to production in two weeks: AI automation for support tickets plus a sandboxed trading bot. Clear docs, secure keys, and a team that ships.",
-    initials: "RC",
-    name: "Ryan Cooper",
-    role: "Director of Operations, ScaleFlow",
+    text: "We needed production automation, not demos. SAAZ shipped voice + workflow systems that run every day — clear, reliable, and built for scale.",
+    initials: "SZ",
+    name: "Shah Zain",
+    role: "with Salman & partners",
+    image: "/media/reviews/review-team-call.png",
   },
 ];
 

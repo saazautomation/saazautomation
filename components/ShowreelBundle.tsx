@@ -35,7 +35,7 @@ export default function ShowreelBundle() {
           viewport={{ once: true }}
         >
           <span className="bundle-eyebrow-icon" aria-hidden />
-          High-fidelity motion assets for elite operators.
+          Live AI automation systems for operators who want leverage.
         </motion.p>
 
         <div className="bundle-mega-top">
@@ -47,7 +47,7 @@ export default function ShowreelBundle() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            WATCH OUR SHOWREEL
+            AI AUTOMATION IN ACTION
           </motion.h2>
         </div>
 
@@ -61,7 +61,7 @@ export default function ShowreelBundle() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              No. 1
+              24/7
             </motion.h3>
             <motion.div
               className="bundle-mega bundle-mega-stat bundle-mega-stat-word"
@@ -71,8 +71,8 @@ export default function ShowreelBundle() {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <span className="bundle-stat-num bundle-stat-word-text">Data </span>
-              <span className="bundle-stat-num bundle-stat-word-text">Reach</span>
+              <span className="bundle-stat-num bundle-stat-word-text">AI </span>
+              <span className="bundle-stat-num bundle-stat-word-text">Ops</span>
             </motion.div>
           </div>
 
@@ -92,7 +92,7 @@ export default function ShowreelBundle() {
               loop
               playsInline
               preload="metadata"
-              aria-label="SAAZ Automation showreel"
+              aria-label="SAAZ AI automation demo"
             />
           </motion.div>
 
@@ -107,7 +107,7 @@ export default function ShowreelBundle() {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.99 }}
           >
-            <span className="bundle-cta-title">get the bundle</span>
+            <span className="bundle-cta-title">automate my ops</span>
           </motion.button>
         </div>
       </motion.div>
