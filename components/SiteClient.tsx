@@ -13,6 +13,7 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import Marquee from "./Marquee";
 import Nav from "./Nav";
+import IndustrySections from "./IndustrySections";
 import Portfolio from "./Portfolio";
 import Preloader from "./Preloader";
 import Process from "./Process";
@@ -39,6 +40,7 @@ export default function SiteClient() {
         <DiscoveryFlowSection />
         <Marquee />
         <Portfolio />
+        <IndustrySections />
         <ShowreelBundle />
         <StudioShowcase />
         <MagicAiSearchSection />

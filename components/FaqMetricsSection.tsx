@@ -58,7 +58,7 @@ export default function FaqMetricsSection() {
             Built for teams that need autonomous workflows with control, speed, and clarity.
           </p>
           <a href="#portfolio" className="faqm-cta">
-            Visit Trading Bot Portfolio
+            Visit Working Gallery
           </a>
         </div>
 

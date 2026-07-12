@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 
 const SEARCH_QUERIES = [
-  "Find what's selling right now",
-  "Find me the best selling products in Europe",
-  "Show me new Shopify stores in fashion",
-  "Find me the best selling products in Europe",
-  "Which ads are spending the most on pet products?",
-  "Show me top earners in home decor",
-  "What is trending on TikTok Shop right now?",
+  "Why do leads go cold before my team calls back?",
+  "How do I stop losing deals to slow follow-up?",
+  "Can AI handle after-hours inbound without hiring?",
+  "Where is manual CRM work burning the most hours?",
+  "How do I cut no-shows without more front-desk staff?",
+  "What workflows still break every time someone is out?",
+  "How do I sync voice agents, CRM, and billing automatically?",
 ] as const;
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
@@ -52,8 +52,8 @@ export default function MagicAiSearchSection() {
             NEW: Magic AI Search
           </h2>
           <p className="magic-search-subtitle">
-            Find your next profitable product by exploring our vast database with
-            millions of products and ads, using our smart search.
+            Ask about the automation bottlenecks slowing your business — missed
+            follow-ups, manual CRM work, after-hours gaps — and get AI-ready answers.
           </p>
           <a href="#cta" className="magic-search-cta">
             Learn More
