@@ -86,7 +86,7 @@ export default function ShowreelBundle() {
           >
             <video
               className="bundle-video"
-              src="/media/saaz-showreel.mp4"
+              src="/media/what-we-do.mov"
               autoPlay
               muted
               loop

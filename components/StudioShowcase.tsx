@@ -87,7 +87,7 @@ export default function StudioShowcase() {
 
               <div className="studio-card-video">
                 <video
-                  src="/media/saaz-showreel.mp4"
+                  src="/media/who-we-are.mov"
                   autoPlay
                   muted
                   loop
